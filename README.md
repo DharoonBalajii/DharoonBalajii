@@ -21,19 +21,19 @@ Won **Best Fresher** at a hackathon. Currently deep in code and curiosity.
 
 ## 🚀 What I'm Building
 
-### 🌐 LearnFlow
-> AI-powered learning platform designed to make studying more organised and efficient.
+### 🧠 LearnFlow
+> AI-powered learning platform that transforms complex topics into structured learning journeys.
 
-Helps students manage notes, track progress, generate study materials, and create personalised learning paths — reducing time spent organising so more time goes toward actually learning.
+Breaks a subject into subtopics, identifies high-quality educational videos based on relevance, popularity, and engagement, and automatically creates personalised YouTube playlists in the user's preferred language — so students learn efficiently without spending hours searching for resources.
 
 🔗 [balajiilabs.site](https://balajiilabs.site)
 
 ---
 
-### 🧠 Study Buddy
-> AI-based academic assistant that helps students study smarter.
+### 😊 Study Buddy
+> AI-powered student companion combining computer vision with human-centered software design.
 
-Answers questions, explains concepts, summarises notes, generates quizzes, and provides conversational learning support — a virtual study companion available anytime for academic tasks.
+Uses OpenCV-based face detection and emotion analysis to monitor student engagement and mood, encouraging healthy study habits through break reminders, motivational messages, and music recommendations tailored to emotional state. Includes productivity tracking and real-time interaction features — demonstrating practical application of OOP, computer vision, and human-centered design.
 
 ---
 
