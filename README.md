@@ -12,12 +12,42 @@
 
 **Hey, I'm Dharoon** — a first-year CSE student at VIT Vellore who builds things before fully knowing how.
 
-- 🔭 Building **[LearnFlow](https://balajiilabs.site)** — AI-generated learning roadmaps
-- 🤖 Into **AI products**, **SaaS**, and whatever I'm obsessed with this week
-- 🏆 Won Best Fresher at a hackathon with an AI wellness assistant
-- 📬 dharoonbalajiie@gmail.com
+Into **AI products** and **SaaS** — obsessed with turning ideas into real, working software.
+Won **Best Fresher** at a hackathon. Currently deep in code and curiosity.
 
 <br clear="right"/>
+
+---
+
+## 🚀 What I'm Building
+
+### 🌐 LearnFlow
+> AI-powered learning platform designed to make studying more organised and efficient.
+
+Helps students manage notes, track progress, generate study materials, and create personalised learning paths — reducing time spent organising so more time goes toward actually learning.
+
+🔗 [balajiilabs.site](https://balajiilabs.site)
+
+---
+
+### 🧠 Study Buddy
+> AI-based academic assistant that helps students study smarter.
+
+Answers questions, explains concepts, summarises notes, generates quizzes, and provides conversational learning support — a virtual study companion available anytime for academic tasks.
+
+---
+
+### 💚 AI Student Wellbeing Platform
+> AI-powered mental wellness platform built for educational institutions at scale.
+
+Provides emotional support through AI-driven conversations, mood tracking, and personalised wellbeing recommendations. Generates structured reports for licensed therapists, enabling faster assessment and intervention. Built to serve campuses with thousands of students — helping institutions identify at-risk individuals and reduce the load on counseling teams.
+
+---
+
+### 🚨 Smart Emergency Detection & Alert System
+> IoT-based emergency response system designed to cut response time during critical situations.
+
+A wearable device with impact and fall detection sensors identifies emergencies and triggers instant alerts via WhatsApp to caretakers. Combines embedded systems, cloud communication, a backend service, and a web dashboard into a scalable safety monitoring solution.
 
 ---
 
@@ -36,10 +66,10 @@
 
 ---
 
-## 📊 Stats
+## 📊 This Year
 
 <div align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=0d1117&title_color=c792ea&icon_color=c792ea&text_color=a9b1d6"/>
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=true&bg_color=0d1117&title_color=c792ea&icon_color=c792ea&text_color=a9b1d6&custom_title=2026%20Contributions"/>
   <img height="160" src="https://github-readme-streak-stats.herokuapp.com?user=YOUR_GITHUB_USERNAME&theme=tokyonight-duo&hide_border=true&background=0d1117&ring=c792ea&fire=ff9e64&currStreakLabel=c792ea"/>
 </div>
 
@@ -47,7 +77,7 @@
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dharoonbalajii/)
 [![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dharoonbalajiie@gmail.com)
 
 </div>
