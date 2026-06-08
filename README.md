@@ -75,6 +75,12 @@ A wearable device with impact and fall detection sensors identifies emergencies 
   <img height="160" src="https://github-readme-streak-stats.herokuapp.com?user=YOUR_GITHUB_USERNAME&theme=tokyonight-duo&hide_border=true&background=0d1117&ring=c792ea&fire=ff9e64&currStreakLabel=c792ea"/>
 </div>
 
+<br/>
+
+<div align="center">
+  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_GITHUB_USERNAME&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=c792ea&line=7aa2f7&point=ff9e64&area=true&area_color=302b63"/>
+</div>
+
 ---
 
 <div align="center">
