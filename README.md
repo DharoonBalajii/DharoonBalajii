@@ -44,10 +44,12 @@ Provides emotional support through AI-driven conversations, mood tracking, and p
 
 ---
 
-### 🚨 Smart Emergency Detection & Alert System
+### 🚨 Safe Step
 > IoT-based emergency response system designed to cut response time during critical situations.
 
 A wearable device with impact and fall detection sensors identifies emergencies and triggers instant alerts via WhatsApp to caretakers. Combines embedded systems, cloud communication, a backend service, and a web dashboard into a scalable safety monitoring solution.
+
+🔗 [mdp2026.netlify.app](https://mdp2026.netlify.app/)
 
 ---
 
