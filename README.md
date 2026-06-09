@@ -8,7 +8,7 @@
 
 <br/>
 
-<img align="right" width="360" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif"/>
+<img align="right" width="360" src="https://raw.githubusercontent.com/7oSkaaa/7oSkaaa/main/Images/Right_Side.gif"/>
 
 **Hey, I'm Dharoon** — a first-year CSE student at VIT Vellore who builds things before fully knowing how.
 
@@ -64,21 +64,6 @@ A wearable device with impact and fall detection sensors identifies emergencies 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
-</div>
-
----
-
-## 📊 This Year
-
-<div align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=DharoonBalajii&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=true&bg_color=0d1117&title_color=c792ea&icon_color=c792ea&text_color=a9b1d6&custom_title=2026%20Contributions"/>
-  <img height="160" src="https://github-readme-streak-stats.herokuapp.com?user=DharoonBalajii&theme=tokyonight-duo&hide_border=true&background=0d1117&ring=c792ea&fire=ff9e64&currStreakLabel=c792ea"/>
-</div>
-
-<br/>
-
-<div align="center">
-  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=DharoonBalajii&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=c792ea&line=7aa2f7&point=ff9e64&area=true&area_color=302b63"/>
 </div>
 
 ---
