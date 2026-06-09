@@ -8,7 +8,7 @@
 
 <br/>
 
-<img align="right" width="360" src="https://raw.githubusercontent.com/7oSkaaa/7oSkaaa/main/Images/Right_Side.gif"/>
+<img align="right" width="360" src="https://user-images.githubusercontent.com/74038190/240825371-403af6cc-32fd-4026-8fb5-ae523bf899c3.gif"/>
 
 **Hey, I'm Dharoon** — a first-year CSE student at VIT Vellore who builds things before fully knowing how.
 
@@ -64,6 +64,18 @@ A wearable device with impact and fall detection sensors identifies emergencies 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
+</div>
+
+---
+
+## 🐍 Contributions
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DharoonBalajii/DharoonBalajii/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DharoonBalajii/DharoonBalajii/output/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/DharoonBalajii/DharoonBalajii/output/github-contribution-grid-snake.svg">
+  </picture>
 </div>
 
 ---
