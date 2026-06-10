@@ -10,7 +10,7 @@
 
 <img align="right" width="360" src="https://user-images.githubusercontent.com/74038190/240825371-403af6cc-32fd-4026-8fb5-ae523bf899c3.gif"/>
 
-**Hey, I'm Dharoon** — a first-year CSE student at VIT Vellore who builds things before fully knowing how.
+**Hey, I'm Dharoon** — a second-year CSE student at VIT Vellore who builds things before fully knowing how.
 
 Into **AI products** and **SaaS** — obsessed with turning ideas into real, working software.
 Won **Best Fresher** at a hackathon. Currently deep in code and curiosity.
