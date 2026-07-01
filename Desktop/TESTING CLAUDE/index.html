@@ -219,6 +219,67 @@
   @keyframes spin{to{transform:rotate(360deg)}}
   #loader p { font-weight:800; letter-spacing:.04em; }
   @media (prefers-reduced-motion: reduce){ .spinner{animation:none} }
+
+  /* ---------------- QUEST LOG ---------------- */
+  .quests { top:74px; right:16px; padding:11px 13px 10px; width:238px; max-width:60vw; }
+  .quests .qhead {
+    display:flex; justify-content:space-between; align-items:center; gap:8px;
+    font-size:9px; letter-spacing:.2em; text-transform:uppercase; font-weight:800; color:var(--kaki); margin-bottom:9px;
+  }
+  .quests .qhead .qcount { color:var(--ink); background:rgba(43,34,51,.08); border-radius:20px; padding:1px 8px; letter-spacing:.06em; }
+  #questList { list-style:none; display:flex; flex-direction:column; gap:6px; }
+  .quest { display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; line-height:1.15; transition:.2s; }
+  .quest .qtick {
+    flex:none; width:17px; height:17px; border-radius:6px; border:2px solid var(--ink);
+    display:grid; place-items:center; font-size:11px; font-weight:900; color:transparent; background:#fff;
+  }
+  .quest .qlabel { flex:1; }
+  .quest .qnum { flex:none; font-size:10px; font-weight:800; opacity:.5; font-variant-numeric:tabular-nums; }
+  .quest.done .qtick { background:var(--leaf); border-color:var(--leaf); color:#fff; }
+  .quest.done .qlabel { opacity:.5; text-decoration:line-through; text-decoration-thickness:1.5px; }
+  .quest.done .qnum { opacity:0; }
+  .quest.pop { animation: qpop .5s cubic-bezier(.2,.9,.3,1.4); }
+  @keyframes qpop { 0%{transform:scale(1);} 40%{transform:scale(1.06) translateX(3px);} 100%{transform:scale(1);} }
+  @media (max-width:760px){ .quests{ top:58px; right:12px; width:min(210px,52vw); font-size:11px; } }
+
+  /* ---------------- VICTORY SCREEN ---------------- */
+  #end {
+    position:fixed; inset:0; z-index:70; display:grid; place-items:center; padding:22px; overflow:hidden;
+    opacity:0; pointer-events:none; transition: opacity .7s ease;
+    background:
+      radial-gradient(80% 55% at 50% 108%, #ffcf8f 0%, rgba(255,207,143,0) 55%),
+      linear-gradient(180deg, #12183a 0%, #4a3a6b 44%, #d98a5a 100%);
+  }
+  #end.show { opacity:1; pointer-events:auto; }
+  #end .petals .petal { background:#ffe3a0; }
+  #end .petals .petal.dk { background:#ffcf6b; }
+  .endcard {
+    position:relative; z-index:2; width:min(460px, 93vw); text-align:center;
+    background:linear-gradient(180deg, #fffaf1 0%, #fff2e0 100%);
+    border:2px solid var(--ink); border-radius:26px; padding:0 30px 30px; overflow:hidden;
+    box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 13px 15px 0 rgba(43,34,51,.2), 0 34px 70px -26px rgba(0,0,0,.7);
+    animation: cardrise .8s cubic-bezier(.2,.9,.3,1.2) both;
+  }
+  .endcard .gate { background:radial-gradient(78% 96% at 50% 30%, #ffd98a 0%, #f0a0b8 42%, #7a6aa0 100%); }
+  .endcard .kicker { display:block; margin-top:18px; font-size:11px; letter-spacing:.42em; text-transform:uppercase; color:var(--kaki); font-weight:700; }
+  .endcard h1 { font-family:var(--display); font-size:31px; font-weight:900; line-height:1.05; margin:7px 0 2px; }
+  .endcard h1 .jp { display:block; font-family:var(--display); font-size:13px; opacity:.42; font-weight:700; letter-spacing:.14em; margin-top:6px; }
+  .endcard p.lede { font-size:13.5px; line-height:1.55; opacity:.72; margin:11px 6px 18px; }
+  .stats { display:flex; gap:10px; margin:0 0 22px; }
+  .stat { flex:1; border:2px solid var(--ink); border-radius:14px; padding:12px 6px 10px; background:#fff; }
+  .stat b { display:block; font-family:var(--display); font-size:24px; font-weight:900; line-height:1; }
+  .stat span { display:block; font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; opacity:.5; margin-top:5px; }
+  .endbtns { display:flex; gap:10px; }
+  .endbtns a {
+    flex:1; text-decoration:none; text-align:center; font-family:var(--display); font-weight:900; font-size:15px;
+    padding:14px 10px; border:2px solid var(--ink); border-radius:14px; cursor:pointer; transition:transform .08s, box-shadow .08s, filter .12s;
+  }
+  .endbtns .again { color:#fff; background:var(--torii); box-shadow:0 6px 0 var(--toriiDk); }
+  .endbtns .hello { color:var(--ink); background:#fff; box-shadow:0 6px 0 rgba(43,34,51,.85); }
+  .endbtns a:hover { filter:brightness(1.04); }
+  .endbtns a:active { transform:translateY(5px); box-shadow:0 1px 0 var(--toriiDk); }
+  .endbtns .hello:active { box-shadow:0 1px 0 rgba(43,34,51,.85); }
+  .endbtns a:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
 </style>
 </head>
 <body>
@@ -267,7 +328,7 @@
 
       <span class="kicker">an interactive résumé</span>
       <h1>Dharoon's World<span class="jp">ダルーンの世界</span></h1>
-      <p class="lede">You're at the gate of a little world where every torii, monument and glowing gem is a piece of Dharoon Balajii's story. Sign the log and take a walk.</p>
+      <p class="lede">You're at the gate of a little world built from Dharoon Balajii's story. Take on five small missions — learn his skills, tour his halls and dig up hidden projects — to complete the journey.</p>
       <div class="field">
         <label for="nameInput">What should we call you, traveller?</label>
         <input id="nameInput" type="text" maxlength="16" placeholder="Your name" autocomplete="off" />
@@ -275,7 +336,7 @@
       <div class="field">
         <label>How are you walking?</label>
         <div class="seg" id="modeSeg">
-          <button data-mode="keyboard"><span class="ic">⌨️</span>Keyboard<span class="hint">WASD · arrows</span></button>
+          <button data-mode="keyboard"><span class="ic">⌨️</span>Keyboard<span class="hint">WASD · shift-run</span></button>
           <button data-mode="touch"><span class="ic">📱</span>Touch<span class="hint">joystick · tap</span></button>
         </div>
       </div>
@@ -284,10 +345,59 @@
     </div>
   </div>
 
+  <!-- VICTORY -->
+  <div id="end">
+    <div class="petals" aria-hidden="true">
+      <span class="petal"    style="left:8%;  animation-duration:9s;  animation-delay:-1s;"></span>
+      <span class="petal dk" style="left:22%; animation-duration:12s; animation-delay:-5s;"></span>
+      <span class="petal"    style="left:38%; animation-duration:8s;  animation-delay:-3s;"></span>
+      <span class="petal dk" style="left:54%; animation-duration:11s; animation-delay:-7s;"></span>
+      <span class="petal"    style="left:68%; animation-duration:10s; animation-delay:-2s;"></span>
+      <span class="petal dk" style="left:84%; animation-duration:13s; animation-delay:-9s;"></span>
+      <span class="petal"    style="left:95%; animation-duration:9s;  animation-delay:-4s;"></span>
+    </div>
+    <div class="endcard">
+      <div class="gate" aria-hidden="true">
+        <svg viewBox="0 0 260 156" role="img">
+          <defs>
+            <radialGradient id="sun2" cx="50%" cy="46%" r="52%">
+              <stop offset="0%"   stop-color="#fff0c0"/>
+              <stop offset="52%"  stop-color="#ffcf6b"/>
+              <stop offset="100%" stop-color="#ffcf6b" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle class="sunpulse" cx="130" cy="62" r="60" fill="url(#sun2)"/>
+          <circle cx="130" cy="62" r="34" fill="#ffdf94" opacity=".95"/>
+          <path d="M66,50 L82,50 L86,156 L62,156 Z" fill="#d23b32"/>
+          <path d="M178,50 L194,50 L198,156 L174,156 Z" fill="#d23b32"/>
+          <rect x="52" y="84" width="156" height="15" rx="2" fill="#d23b32"/>
+          <rect x="123" y="57" width="14" height="27" fill="#b7302a"/>
+          <rect x="38" y="49" width="184" height="9" rx="3" fill="#d23b32"/>
+          <path d="M24,50 C26,32 44,24 66,26 L194,26 C216,24 234,32 236,50 L224,50 C222,38 208,32 192,34 L68,34 C52,32 38,38 36,50 Z" fill="#20222a"/>
+        </svg>
+      </div>
+      <span class="kicker">journey complete</span>
+      <h1>You walked it all<span class="jp">お疲れさま — thanks for exploring</span></h1>
+      <p class="lede" id="endLede">Nice walk!</p>
+      <div class="stats">
+        <div class="stat"><b id="sPlaces">0</b><span>Halls seen</span></div>
+        <div class="stat"><b id="sSkills">0</b><span>Skills learnt</span></div>
+        <div class="stat"><b id="sChests">0</b><span>Projects found</span></div>
+      </div>
+      <div class="endbtns">
+        <a class="again" id="againBtn" href="#">Walk again ↺</a>
+        <a class="hello" href="mailto:hello@dharoonbalajii.space">Say hello ✉</a>
+      </div>
+    </div>
+  </div>
+
   <!-- HUD -->
   <div class="hud title"><div class="eyebrow">now exploring</div><h2>Dharoon's World</h2></div>
   <div class="hud compass panelchip"><div class="big" id="heading">N</div><div class="sub" id="dist">home</div></div>
-  <div class="hud progress panelchip"><div>Places <b id="pPlaces">0/6</b></div><div>Skills <b id="pSkills">0/6</b></div></div>
+  <div class="hud quests panelchip">
+    <div class="qhead"><span>Missions</span><span class="qcount" id="qDone">0/5</span></div>
+    <ul id="questList"></ul>
+  </div>
 
   <div class="hud skilltray panelchip">
     <div class="lbl">Skills collected</div>
@@ -295,7 +405,7 @@
   </div>
 
   <div class="hud controls panelchip">
-    <div class="lbl">Move · Look · Jump</div>
+    <div class="lbl">Move · Look · Run · Jump</div>
     <div class="ck">
       <div class="padcol"><div class="pad">
         <div class="key c1r1" data-k="w">W</div><div class="key c0r2" data-k="a">A</div>
@@ -305,6 +415,7 @@
         <div class="key cam c1r1" data-k="camU">↑</div><div class="key cam c0r2" data-k="camL">←</div>
         <div class="key cam c1r2" data-k="camD">↓</div><div class="key cam c2r2" data-k="camR">→</div>
       </div><div class="cap">look</div></div>
+      <div class="padcol"><div class="key space" data-k="shift" style="width:70px">SHIFT</div><div class="cap">run</div></div>
       <div class="padcol"><div class="key space" data-k="space">SPACE</div><div class="cap">jump</div></div>
     </div>
   </div>
@@ -503,6 +614,53 @@ function signTablet(){ // ABOUT nameplate
   return g;
 }
 
+/* ================= village buildings ================= */
+function house(bodyCol=C.wall2, roofCol=C.roofSlate){ // cozy village home
+  const g=new THREE.Group();
+  g.add(M(geo('hsBody',()=>new THREE.BoxGeometry(3,2.2,3.4)),toon(bodyCol),0,1.1,0,true,true));
+  const roof=M(geo('hsRoof',()=>new THREE.ConeGeometry(2.7,1.5,4)),toon(roofCol),0,3.0,0); roof.rotation.y=Math.PI/4; roof.scale.set(1.18,1,1.18); g.add(roof);
+  g.add(M(geo('hsDoor',()=>new THREE.BoxGeometry(0.85,1.3,0.16)),toon(C.wood),0,0.65,1.72,false));
+  g.add(M(geo('hsWin',()=>new THREE.BoxGeometry(0.62,0.62,0.1)),glow(C.glow),1.0,1.35,1.72,false));
+  g.add(M(geo('hsWin',()=>new THREE.BoxGeometry(0.62,0.62,0.1)),glow(C.glow),-1.0,1.35,1.72,false));
+  g.add(M(geo('hsChim',()=>new THREE.BoxGeometry(0.4,0.8,0.4)),toon(C.wood),0.9,3.1,0.5));
+  return g;
+}
+function marketStall(){ // little red-awning stall
+  const g=new THREE.Group();
+  g.add(M(geo('msTop',()=>new THREE.BoxGeometry(2.2,0.2,1.5)),toon(C.wood),0,1.35,0,true,true));
+  for(const sx of [-1,1]) for(const sz of [-1,1]) g.add(M(geo('msLeg',()=>new THREE.CylinderGeometry(0.06,0.06,1.4,6)),toon(0x5b3f28),sx*0.95,0.7,sz*0.55));
+  const awn=M(geo('msAwn',()=>new THREE.ConeGeometry(1.8,0.7,4)),toon(C.vermilion),0,2.05,0); awn.rotation.y=Math.PI/4; awn.scale.set(1.12,1,0.8); g.add(awn);
+  g.add(M(geo('msBox',()=>new THREE.BoxGeometry(0.5,0.5,0.5)),toon(C.gold),0.5,1.7,0,false));
+  g.add(M(geo('msBox2',()=>new THREE.BoxGeometry(0.45,0.45,0.45)),toon(C.blossom),-0.5,1.68,0.2,false));
+  return g;
+}
+function well(){ // stone wishing well
+  const g=new THREE.Group();
+  g.add(M(geo('wlRing',()=>new THREE.CylinderGeometry(0.85,0.9,0.9,14)),toon(C.stone),0,0.45,0,true,true));
+  g.add(M(geo('wlWater',()=>new THREE.CylinderGeometry(0.66,0.66,0.05,14)),glow(0x6fc4d6),0,0.8,0,false));
+  for(const sx of [-1,1]) g.add(M(geo('wlPost',()=>new THREE.CylinderGeometry(0.08,0.08,1.5,7)),toon(C.wood),sx*0.75,1.3,0));
+  const roof=M(geo('wlRoof',()=>new THREE.ConeGeometry(1.15,0.7,4)),toon(C.roofGreen),0,2.35,0); roof.rotation.y=Math.PI/4; g.add(roof);
+  return g;
+}
+
+/* ================= treasure chest (interactive) ================= */
+function treasureChest(){
+  const g=new THREE.Group();
+  g.add(M(geo('tcBody',()=>new THREE.BoxGeometry(1.2,0.72,0.86)),toon(C.wood),0,0.36,0,true,true));
+  g.add(M(geo('tcBandV',()=>new THREE.BoxGeometry(0.14,0.74,0.9)),toon(C.gold),0,0.36,0,false));
+  g.add(M(geo('tcLock',()=>new THREE.BoxGeometry(0.22,0.26,0.12)),toon(C.gold),0,0.5,0.45,false));
+  // hinged lid
+  const lidPivot=new THREE.Group(); lidPivot.position.set(0,0.72,-0.43); g.add(lidPivot);
+  lidPivot.add(M(geo('tcLid',()=>new THREE.BoxGeometry(1.2,0.3,0.86)),toon(C.wood),0,0.15,0.43,true));
+  lidPivot.add(M(geo('tcLidBand',()=>new THREE.BoxGeometry(0.14,0.32,0.9)),toon(C.gold),0,0.16,0.43,false));
+  // loot glow (revealed on open)
+  const gem=new THREE.Mesh(geo('tcGem',()=>new THREE.OctahedronGeometry(0.26,0)), glow(0xffe08a)); gem.position.set(0,0.62,0); gem.visible=false; g.add(gem);
+  // floating quest marker (hidden on open)
+  const mark=new THREE.Mesh(geo('tcMark',()=>new THREE.OctahedronGeometry(0.2,0)), glow(0xffcf6b)); mark.position.set(0,1.7,0); g.add(mark);
+  g.userData={ lid:lidPivot, gem, mark };
+  return g;
+}
+
 /* ================= character factory ================= */
 const matEye=new THREE.MeshBasicMaterial({color:0x241c2e}), matWhite=new THREE.MeshBasicMaterial({color:0xffffff});
 function makeCharacter(opt={}){
@@ -566,7 +724,7 @@ const dharoonStation = addStation({ pos:new THREE.Vector3(3.0,0,-1.5), r:5, acce
 add(academy(), 0,-32, 0);
 add(lanternPost(),-4,-27); add(lanternPost(),4,-27);
 placeLabel('VIT — B.Tech CSE','#3f6f9f', 0,8.4,-32, 1.2);
-addStation({ pos:new THREE.Vector3(0,0,-28), r:9, accent:'#3f6f9f',
+const eduStation = addStation({ pos:new THREE.Vector3(0,0,-28), r:9, accent:'#3f6f9f',
   kicker:'education', title:'B.Tech — Computer Science & Engineering',
   sub:'Vellore Institute of Technology · 2025–2029',
   lines:['Currently pursuing CSE at VIT, Vellore.','Foundation in software, SaaS and AI-assisted development.','Building the fundamentals to ship real products.'] });
@@ -586,20 +744,21 @@ const certs = [
 ];
 placeLabel('Certifications','#7a5cc0', 0,3.0,22, 1.1);
 add(torii(0.7), 0,22.5);
+const certStations=[];
 certs.forEach((ct,i)=>{
   const t=(i-(certs.length-1)/2);
   const x=t*4.4, z=30 + Math.abs(t)*1.6;
   const s=stele(ct.c); add(s, x, z, Math.PI); // face spawn
   placeLabel(ct.p, '#'+ct.c.toString(16).padStart(6,'0'), x,4.0,z, 0.85);
-  addStation({ pos:new THREE.Vector3(x,0,z), r:4.2, accent:'#'+ct.c.toString(16).padStart(6,'0'),
-    kicker:'certification · '+ct.p, title:ct.title, sub:ct.sub, lines:ct.lines, _orb:s.userData.orb });
+  certStations.push(addStation({ pos:new THREE.Vector3(x,0,z), r:4.2, accent:'#'+ct.c.toString(16).padStart(6,'0'),
+    kicker:'certification · '+ct.p, title:ct.title, sub:ct.sub, lines:ct.lines, _orb:s.userData.orb }));
 });
 
 /* --- EXTRA-CURRICULAR (west) --- */
 add(workshop(), -32,0, Math.PI/2);
 add(lanternPost(),-27,3); add(lanternPost(),-27,-3);
 placeLabel('Learn Flow — Projects','#2a8e82', -32,5.0,0, 1.1);
-addStation({ pos:new THREE.Vector3(-28,0,0), r:8, accent:'#2a8e82',
+const projStation = addStation({ pos:new THREE.Vector3(-28,0,0), r:8, accent:'#2a8e82',
   kicker:'extra-curricular', title:'Learn Flow & Beyond',
   sub:'Building · prototyping · collaborating',
   lines:['Developing Learn Flow — a student-focused educational platform.','Uses AI-assisted & no-code/low-code workflows to prototype fast.','Passionate about SaaS products & tech entrepreneurship.','Collaborates with peers on technical projects & product planning.'] });
@@ -607,7 +766,7 @@ addStation({ pos:new THREE.Vector3(-28,0,0), r:8, accent:'#2a8e82',
 /* --- ACHIEVEMENTS (north-east) --- */
 add(pagodaTrophy(), 26,-24, -Math.PI*0.75);
 placeLabel('Best Freshers 🏆','#e7a23c', 26,6.2,-24, 1.1);
-addStation({ pos:new THREE.Vector3(26,0,-24), r:8, accent:'#e7a23c',
+const achStation = addStation({ pos:new THREE.Vector3(26,0,-24), r:8, accent:'#e7a23c',
   kicker:'achievement', title:'Best Freshers Award 🏆',
   sub:'Hackathon · innovation & execution',
   lines:['Built an AI-powered student wellness assistant for mental-health support.',"Awarded 'Best Freshers' for innovation & project execution.",'Won a ₹2,100 cash prize.'] });
@@ -634,8 +793,40 @@ SKILLS.forEach((sk,i)=>{
   gems.push({ ...sk, mesh, lbl, base:null, pos:new THREE.Vector3(x,0,z), collected:false, phase:i });
 });
 
+/* --- VILLAGE (south-west, a little hamlet to wander through) --- */
+placeLabel('Little Village','#8a6a4a', -18,4.6,16, 1.0);
+const houseCols=[[C.wall2,C.roofSlate],[0xf1d9b8,C.roofBlue],[0xe7ccc0,C.roofGreen],[0xdfe6d2,0x8a5a3a]];
+const villageSpots=[[-22,12,0.6],[-16,14,-0.5],[-12,19,-1.4],[-20,20,0.3],[-25,17,1.1]];
+villageSpots.forEach((s,i)=>{ const[hx,hz,ry]=s; add(house(...houseCols[i%houseCols.length]), hx,hz, ry); });
+add(well(), -18,16.5);
+add(marketStall(), -14,10, 0.4); add(marketStall(), -24,10.5, -0.5);
+add(lanternPost(),-19,11.5); add(lanternPost(),-13,17);
+
+/* --- TREASURE CHESTS (hidden project scrolls, scattered to reward exploring) --- */
+const CHESTS=[
+  { x:13, z:11,  accent:'#2a8e82', kicker:'project unearthed', title:'Learn Flow',
+    sub:'EdTech · SaaS · in progress',
+    lines:['A student-focused learning platform Dharoon is building.','Uses AI-assisted & no-code / low-code workflows to ship fast.','His first real step into SaaS product-building.'] },
+  { x:-15, z:-12, accent:'#e7a23c', kicker:'project unearthed', title:'Aura — Wellness AI',
+    sub:'Hackathon build · Best Freshers 🏆',
+    lines:['An AI-powered student wellness assistant for mental-health support.','Took the Best Freshers award & a ₹2,100 prize.'] },
+  { x:22, z:9,   accent:'#7a5cc0', kicker:'toolkit unearthed', title:'How Dharoon builds',
+    sub:'SaaS · AI · rapid prototyping',
+    lines:['Turns rough ideas into working prototypes, fast.','Blends AI tools with no-code / low-code to validate quickly.','Tracks the SaaS metrics that matter: MRR, CAC, LTV, churn.'] },
+  { x:-24, z:24, accent:'#d23b32', kicker:'secret unearthed', title:'A note from Dharoon',
+    sub:'thanks for exploring 💌',
+    lines:['You reached the far edge of my world — thank you for the walk!','Let’s build something together: hello@dharoonbalajii.space'] },
+];
+const chests=[];
+CHESTS.forEach(cData=>{
+  const c=treasureChest(); add(c, cData.x, cData.z, Math.PI);
+  chests.push({ ...cData, group:c, lid:c.userData.lid, gem:c.userData.gem, mark:c.userData.mark,
+    pos:new THREE.Vector3(cData.x,0,cData.z), opened:false, lidTarget:0 });
+});
+
 /* clear zones (so chunk nature doesn't grow inside landmarks) */
-const clearZones=[{x:0,z:0,r:9},{x:0,z:-32,r:13},{x:0,z:30,r:16},{x:-32,z:0,r:11},{x:26,z:-24,r:11},{x:34,z:0,r:9}];
+const clearZones=[{x:0,z:0,r:9},{x:0,z:-32,r:13},{x:0,z:30,r:16},{x:-32,z:0,r:11},{x:26,z:-24,r:11},{x:34,z:0,r:9},
+  {x:-18,z:16,r:12},{x:13,z:11,r:3},{x:-15,z:-12,r:3},{x:22,z:9,r:3},{x:-24,z:24,r:3}];
 
 /* ================= chunk streaming (nature only) ================= */
 const cellSize=24, viewR=3, cells=new Map();
@@ -673,7 +864,7 @@ const blob=new THREE.Mesh(new THREE.CircleGeometry(0.5,24),new THREE.MeshBasicMa
 let mode='keyboard';
 const keys={}, keyEls={}; document.querySelectorAll('.key').forEach(el=>keyEls[el.dataset.k]=el);
 function setKey(k,d){ keys[k]=d; if(keyEls[k]) keyEls[k].classList.toggle('down',d); }
-const codeMap={KeyW:'w',KeyA:'a',KeyS:'s',KeyD:'d',Space:'space',ArrowLeft:'camL',ArrowRight:'camR',ArrowUp:'camU',ArrowDown:'camD'};
+const codeMap={KeyW:'w',KeyA:'a',KeyS:'s',KeyD:'d',Space:'space',ArrowLeft:'camL',ArrowRight:'camR',ArrowUp:'camU',ArrowDown:'camD',ShiftLeft:'shift',ShiftRight:'shift'};
 const blockScroll=new Set(['Space','ArrowLeft','ArrowRight','ArrowUp','ArrowDown']);
 addEventListener('keydown',e=>{ if(!started)return; const k=codeMap[e.code]; if(k){setKey(k,true); if(blockScroll.has(e.code))e.preventDefault();} });
 addEventListener('keyup',e=>{ const k=codeMap[e.code]; if(k)setKey(k,false); });
@@ -723,11 +914,55 @@ const toastEl=document.getElementById('toast'), toastText=document.getElementByI
 let toastTimer=null;
 function toast(msg,color){ toastText.textContent=msg; toastDot.style.background=color||'#39b8a8'; toastEl.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>toastEl.classList.remove('show'),2200); }
 
-const pPlaces=document.getElementById('pPlaces'), pSkills=document.getElementById('pSkills'), chipsEl=document.getElementById('chips');
+const chipsEl=document.getElementById('chips');
 const placeCount = stations.filter(s=>s!==dharoonStation).length; // count real résumé places
-let discovered=0, collected=0;
+let discovered=0, collected=0, chestsOpened=0;
 function buildChips(){ chipsEl.innerHTML=''; SKILLS.forEach(sk=>{ const c=document.createElement('span'); c.className='chip empty'; c.dataset.n=sk.n; c.textContent=sk.n; c.style.borderColor='#2b2233'; chipsEl.appendChild(c); }); }
-function updateProgress(){ pPlaces.textContent=discovered+'/'+placeCount; pSkills.textContent=collected+'/'+SKILLS.length; }
+
+/* ================= MISSIONS ================= */
+const MISSIONS=[
+  { id:'meet',  label:'Meet Dharoon, your guide', total:1, cur:()=> dharoonStation.discovered?1:0 },
+  { id:'halls', label:'Tour the three great halls', total:3, cur:()=> [eduStation,projStation,achStation].filter(s=>s.discovered).length },
+  { id:'certs', label:'Study all 5 certifications', total:certStations.length, cur:()=> certStations.filter(s=>s.discovered).length },
+  { id:'skills',label:'Collect every skill gem', total:SKILLS.length, cur:()=> collected },
+  { id:'chest', label:'Uncover all 4 project chests', total:chests.length, cur:()=> chestsOpened },
+];
+const questListEl=document.getElementById('questList'), qDoneEl=document.getElementById('qDone');
+const questRows={};
+function buildQuests(){
+  questListEl.innerHTML='';
+  for(const m of MISSIONS){
+    const li=document.createElement('li'); li.className='quest';
+    li.innerHTML=`<span class="qtick"></span><span class="qlabel"></span><span class="qnum"></span>`;
+    li.querySelector('.qlabel').textContent=m.label;
+    questListEl.appendChild(li); questRows[m.id]=li;
+  }
+}
+let gameWon=false;
+function updateProgress(){
+  let done=0;
+  for(const m of MISSIONS){
+    const cur=Math.min(m.cur(),m.total), ok=cur>=m.total; if(ok)done++;
+    const li=questRows[m.id]; if(!li) continue;
+    li.querySelector('.qnum').textContent=cur+'/'+m.total;
+    li.querySelector('.qtick').textContent=ok?'✓':'';
+    if(ok && !li.classList.contains('done')){ li.classList.add('done','pop'); setTimeout(()=>li.classList.remove('pop'),500); }
+  }
+  if(qDoneEl) qDoneEl.textContent=done+'/'+MISSIONS.length;
+  if(!gameWon && done===MISSIONS.length){ gameWon=true; setTimeout(showEnd, 1100); }
+}
+
+/* ================= VICTORY ================= */
+function showEnd(){
+  toast('All missions complete — you explored it all! 🎉', '#e7a23c');
+  document.getElementById('sPlaces').textContent = discovered;
+  document.getElementById('sSkills').textContent = collected;
+  document.getElementById('sChests').textContent = chestsOpened;
+  document.getElementById('endLede').textContent =
+    `Beautiful walk, ${PLAYER.name}. You met the guide, learned all ${collected} skills, toured every hall and dug up ${chestsOpened} hidden projects. That's the whole of Dharoon's World.`;
+  document.getElementById('end').classList.add('show');
+}
+document.getElementById('againBtn').addEventListener('click', e=>{ e.preventDefault(); location.reload(); });
 
 /* ================= STATE + LOOP ================= */
 const pos=new THREE.Vector3(0,0,2.5);
@@ -755,7 +990,9 @@ function frame(){
   tmpDir.copy(camFwd).multiplyScalar(inF).addScaledVector(right,inS);
   let mag=tmpDir.length(); if(mag>1){tmpDir.multiplyScalar(1/mag);mag=1;}
   const moving = started && mag>0.08;
-  if(moving){ tmpDir.normalize(); pos.addScaledVector(tmpDir,SPEED*mag*dt); facing=Math.atan2(tmpDir.x,tmpDir.z); }
+  const sprinting = moving && (keys.shift || (mode==='touch' && mag>0.92));
+  const spd = SPEED * (sprinting?1.85:1);
+  if(moving){ tmpDir.normalize(); pos.addScaledVector(tmpDir,spd*mag*dt); facing=Math.atan2(tmpDir.x,tmpDir.z); }
 
   // jump
   if((keys.space||wantJump)&&onGround&&started){ velY=JUMP; onGround=false; } wantJump=false;
@@ -766,7 +1003,7 @@ function frame(){
   player.group.rotation.y=cf+diff*Math.min(1,dt*12);
 
   // animation
-  if(moving&&onGround) walkPhase+=dt*9*Math.max(mag,0.5);
+  if(moving&&onGround) walkPhase+=dt*9*Math.max(mag,0.5)*(sprinting?1.6:1);
   const sw=Math.sin(walkPhase),swc=Math.cos(walkPhase), r=player.rig;
   if(moving){ r.legL.rotation.x=sw*0.7;r.legR.rotation.x=-sw*0.7;r.armL.rotation.x=-sw*0.55;r.armR.rotation.x=sw*0.55;r.armL.rotation.z=0.08;r.armR.rotation.z=-0.08;player.body.position.y=Math.abs(swc)*0.05;r.head.rotation.z=sw*0.04; }
   else { const b=Math.sin(t*2)*0.5+0.5; r.legL.rotation.x*=0.8;r.legR.rotation.x*=0.8;r.armL.rotation.x*=0.8;r.armR.rotation.x*=0.8;r.armL.rotation.z=0.12+b*0.02;r.armR.rotation.z=-0.12-b*0.02;player.body.position.y=b*0.02;r.head.rotation.z*=0.85;r.head.rotation.y=Math.sin(t*0.6)*0.12; }
@@ -799,6 +1036,16 @@ function frame(){
     if(started && Math.hypot(pos.x-g.pos.x,pos.z-g.pos.z)<2.4){ collectGem(g); }
   }
 
+  // treasure chests
+  for(const c of chests){
+    if(!c.opened){ c.mark.rotation.y+=dt*1.6; c.mark.position.y=1.7+Math.sin(t*2.2)*0.16;
+      if(started && Math.hypot(pos.x-c.pos.x,pos.z-c.pos.z)<2.2){ openChest(c); }
+    } else {
+      c.gem.rotation.y+=dt*1.6; c.gem.position.y=0.62+Math.sin(t*2.5)*0.06;
+      c.lid.rotation.x += (c.lidTarget - c.lid.rotation.x)*Math.min(1,dt*8);
+    }
+  }
+
   // stations proximity
   if(started){
     let near=null,nd=1e9;
@@ -816,6 +1063,13 @@ function collectGem(g){
   g.collected=true; g.mesh.visible=false; g.lbl.visible=false; collected++; updateProgress();
   const chip=chipsEl.querySelector(`[data-n="${g.n}"]`); if(chip){ chip.classList.remove('empty'); chip.style.background='#'+g.c.toString(16).padStart(6,'0'); chip.style.borderColor='#2b2233'; }
   toast('Skill learned: '+g.n+' — '+g.b, '#'+g.c.toString(16).padStart(6,'0'));
+}
+function openChest(c){
+  c.opened=true; c.lidTarget=-1.35; c.mark.visible=false; c.gem.visible=true; chestsOpened++;
+  showCard({ accent:c.accent, kicker:c.kicker, title:c.title, sub:c.sub, lines:c.lines });
+  activeStation=null; // let the chest card own the panel until you walk on
+  toast('Treasure opened: '+c.title+' ✦', c.accent);
+  updateProgress();
 }
 
 addEventListener('resize',()=>{ camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth,innerHeight); });
@@ -838,9 +1092,9 @@ function begin(){
   // personalize Dharoon's greeting
   dharoonStation.sub = 'Welcome to my world, '+PLAYER.name+'!';
   document.getElementById('start').classList.add('hide');
-  buildChips(); updateProgress();
+  buildChips(); buildQuests(); updateProgress();
   // greet
-  setTimeout(()=>{ showCard(dharoonStation); dharoonStation.discovered=true; activeStation=dharoonStation; toast('Welcome, '+PLAYER.name+'! Find the gems & landmarks ✨', '#39b8a8'); }, 600);
+  setTimeout(()=>{ showCard(dharoonStation); dharoonStation.discovered=true; activeStation=dharoonStation; updateProgress(); toast('Welcome, '+PLAYER.name+'! Check your missions — top right ✨', '#39b8a8'); }, 600);
 }
 document.getElementById('beginBtn').addEventListener('click', begin);
 nameInput.addEventListener('keydown',e=>{ if(e.key==='Enter') begin(); });
