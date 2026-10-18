@@ -148,5 +148,4 @@ Got an idea, a hackathon, or a bug that needs breaking? See more of my work at [
 
 <div align="center">
   <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer" alt=""/>
-  <sub>Animated emoji: <a href="https://googlefonts.github.io/noto-emoji-animation/">Noto Emoji Animation</a> by Google, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></sub>
 </div>
