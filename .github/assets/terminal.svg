@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="300" viewBox="0 0 840 300" role="img" aria-labelledby="t d">
+<title id="t">Dharoon's terminal</title>
+<desc id="d">An animated terminal. whoami: Dharoon Balajii, CSE at VIT Vellore, building AI products and the backends behind them. ls projects: gitpath, raksha-thunai, learnflow, safe-step, socrates-aid. cat gitpath README: any GitHub repo in, an interactive course out, with lessons, quizzes and an AI tutor. ./break-things --safely: rate limiting, Turnstile, encrypted secrets, GitHub OAuth, CI security scan.</desc>
+<style>
+  text { font-family: "JetBrains Mono", "SF Mono", "Fira Code", Menlo, Consolas, "DejaVu Sans Mono", monospace; font-size: 14.5px; white-space: pre; }
+  .show { animation: show .25s ease-out both; }
+  .type { transform: translateX(var(--d)); animation-name: type; animation-fill-mode: both; }
+  .caret { opacity: 0; animation-name: caret; animation-fill-mode: forwards; animation-timing-function: linear; }
+  .blink { animation: show .01s both, blink 1.1s steps(1, end) infinite; }
+  @keyframes show { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes type { from { transform: translateX(0); } to { transform: translateX(var(--d)); } }
+  @keyframes caret { 0%, 99.9% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .show, .type, .caret, .blink { animation: none !important; }
+  }
+</style>
+<rect x="0.5" y="0.5" width="839" height="299" rx="12" fill="#0f0c29" stroke="#302b63"/>
+<path d="M0.5 12.5 a12 12 0 0 1 12 -12 h815 a12 12 0 0 1 12 12 v28 h-839 z" fill="#1c1a3d"/>
+<line x1="0.5" y1="40.5" x2="839.5" y2="40.5" stroke="#302b63"/>
+<circle cx="22" cy="20.5" r="6" fill="#f07178"/>
+<circle cx="42" cy="20.5" r="6" fill="#ffcb6b"/>
+<circle cx="62" cy="20.5" r="6" fill="#c3e88d"/>
+<text x="420.0" y="25.0" fill="#676e95" text-anchor="middle" style="font-size:13px">dharoon@vit — ~/projects — zsh</text>
+<g class="show" style="animation-delay:0.3s"><text x="26.0" y="70" fill="#c792ea" textLength="95.7" lengthAdjust="spacingAndGlyphs">dharoon@vit</text><text x="121.7" y="70" fill="#89ddff" textLength="26.1" lengthAdjust="spacingAndGlyphs"> ~ </text><text x="147.8" y="70" fill="#c3e88d" textLength="17.4" lengthAdjust="spacingAndGlyphs">❯ </text></g>
+<text x="165.2" y="70" fill="#eeffff" textLength="52.2" lengthAdjust="spacingAndGlyphs">whoami</text>
+<g class="type" style="--d:52.2px;animation-duration:0.6s;animation-delay:0.6s;animation-timing-function:steps(6,end)"><rect x="165.2" y="53" width="56.2" height="25" fill="#0f0c29"/><rect class="caret" x="165.2" y="56" width="8.7" height="18" fill="#c792ea" style="animation-duration:0.6s;animation-delay:0.6s"/></g>
+<g class="show" style="animation-delay:1.5s"><text x="26.0" y="95" fill="#a6accd" textLength="661.2" lengthAdjust="spacingAndGlyphs">Dharoon Balajii · CSE @ VIT Vellore · AI products + the backends behind them</text></g>
+<g class="show" style="animation-delay:2.1s"><text x="26.0" y="120" fill="#c792ea" textLength="95.7" lengthAdjust="spacingAndGlyphs">dharoon@vit</text><text x="121.7" y="120" fill="#89ddff" textLength="26.1" lengthAdjust="spacingAndGlyphs"> ~ </text><text x="147.8" y="120" fill="#c3e88d" textLength="17.4" lengthAdjust="spacingAndGlyphs">❯ </text></g>
+<text x="165.2" y="120" fill="#eeffff" textLength="104.4" lengthAdjust="spacingAndGlyphs">ls projects/</text>
+<g class="type" style="--d:104.4px;animation-duration:0.96s;animation-delay:2.4s;animation-timing-function:steps(12,end)"><rect x="165.2" y="103" width="108.4" height="25" fill="#0f0c29"/><rect class="caret" x="165.2" y="106" width="8.7" height="18" fill="#c792ea" style="animation-duration:0.96s;animation-delay:2.4s"/></g>
+<g class="show" style="animation-delay:3.7s"><text x="26.0" y="145" fill="#82aaff" textLength="582.9" lengthAdjust="spacingAndGlyphs">gitpath/   raksha-thunai/   learnflow/   safe-step/   socrates-aid/</text></g>
+<g class="show" style="animation-delay:4.3s"><text x="26.0" y="170" fill="#c792ea" textLength="95.7" lengthAdjust="spacingAndGlyphs">dharoon@vit</text><text x="121.7" y="170" fill="#89ddff" textLength="26.1" lengthAdjust="spacingAndGlyphs"> ~ </text><text x="147.8" y="170" fill="#c3e88d" textLength="17.4" lengthAdjust="spacingAndGlyphs">❯ </text></g>
+<text x="165.2" y="170" fill="#eeffff" textLength="182.7" lengthAdjust="spacingAndGlyphs">cat gitpath/README.md</text>
+<g class="type" style="--d:182.7px;animation-duration:1.05s;animation-delay:4.6s;animation-timing-function:steps(21,end)"><rect x="165.2" y="153" width="186.7" height="25" fill="#0f0c29"/><rect class="caret" x="165.2" y="156" width="8.7" height="18" fill="#c792ea" style="animation-duration:1.05s;animation-delay:4.6s"/></g>
+<g class="show" style="animation-delay:6.0s"><text x="26.0" y="195" fill="#a6accd" textLength="652.5" lengthAdjust="spacingAndGlyphs">Any GitHub repo in → an interactive course out: lessons, quizzes, AI tutor.</text></g>
+<g class="show" style="animation-delay:6.6s"><text x="26.0" y="220" fill="#c792ea" textLength="95.7" lengthAdjust="spacingAndGlyphs">dharoon@vit</text><text x="121.7" y="220" fill="#89ddff" textLength="26.1" lengthAdjust="spacingAndGlyphs"> ~ </text><text x="147.8" y="220" fill="#c3e88d" textLength="17.4" lengthAdjust="spacingAndGlyphs">❯ </text></g>
+<text x="165.2" y="220" fill="#eeffff" textLength="200.1" lengthAdjust="spacingAndGlyphs">./break-things --safely</text>
+<g class="type" style="--d:200.1px;animation-duration:1.15s;animation-delay:6.9s;animation-timing-function:steps(23,end)"><rect x="165.2" y="203" width="204.1" height="25" fill="#0f0c29"/><rect class="caret" x="165.2" y="206" width="8.7" height="18" fill="#c792ea" style="animation-duration:1.15s;animation-delay:6.9s"/></g>
+<g class="show" style="animation-delay:8.4s"><text x="26.0" y="245" fill="#c3e88d" textLength="8.7" lengthAdjust="spacingAndGlyphs">✓</text><text x="43.4" y="245" fill="#a6accd" textLength="113.1" lengthAdjust="spacingAndGlyphs">rate limiting</text></g>
+<g class="show" style="animation-delay:8.7s"><text x="173.9" y="245" fill="#c3e88d" textLength="8.7" lengthAdjust="spacingAndGlyphs">✓</text><text x="191.3" y="245" fill="#a6accd" textLength="78.3" lengthAdjust="spacingAndGlyphs">Turnstile</text></g>
+<g class="show" style="animation-delay:9.0s"><text x="287.0" y="245" fill="#c3e88d" textLength="8.7" lengthAdjust="spacingAndGlyphs">✓</text><text x="304.4" y="245" fill="#a6accd" textLength="147.9" lengthAdjust="spacingAndGlyphs">encrypted secrets</text></g>
+<g class="show" style="animation-delay:9.3s"><text x="469.7" y="245" fill="#c3e88d" textLength="8.7" lengthAdjust="spacingAndGlyphs">✓</text><text x="487.1" y="245" fill="#a6accd" textLength="104.4" lengthAdjust="spacingAndGlyphs">GitHub OAuth</text></g>
+<g class="show" style="animation-delay:9.6s"><text x="608.9" y="245" fill="#c3e88d" textLength="8.7" lengthAdjust="spacingAndGlyphs">✓</text><text x="626.3" y="245" fill="#a6accd" textLength="139.2" lengthAdjust="spacingAndGlyphs">CI security scan</text></g>
+<g class="show" style="animation-delay:10.4s"><text x="26.0" y="270" fill="#c792ea" textLength="95.7" lengthAdjust="spacingAndGlyphs">dharoon@vit</text><text x="121.7" y="270" fill="#89ddff" textLength="26.1" lengthAdjust="spacingAndGlyphs"> ~ </text><text x="147.8" y="270" fill="#c3e88d" textLength="17.4" lengthAdjust="spacingAndGlyphs">❯ </text></g>
+<rect class="blink" x="165.2" y="256" width="8.7" height="18" fill="#c792ea" style="animation-delay:10.4s"/>
+</svg>
