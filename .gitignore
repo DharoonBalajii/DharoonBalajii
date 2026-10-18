@@ -1,3 +1,6 @@
+# This repo lives in the home folder: ignore everything except the profile files
 *
 !.gitignore
 !README.md
+!.github/
+!.github/**
