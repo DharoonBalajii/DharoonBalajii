@@ -83,7 +83,6 @@ It breaks a subject into subtopics, finds high-quality educational videos ranked
 
 `topic` → `subtopics` → `rank the best videos` → `playlist in your language`
 
-<sub>🔗 [balajiilabs.site](https://balajiilabs.site)</sub>
 
 ### 💚 AI Student Wellbeing Platform
 
