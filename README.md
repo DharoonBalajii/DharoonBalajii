@@ -73,8 +73,6 @@ You trigger it with a gesture and it starts listening to the surroundings. It un
 ![Dart](https://img.shields.io/badge/Dart-24243e?style=flat-square&logo=dart&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-24243e?style=flat-square&logo=typescript&logoColor=white)
 
-<sub>🔗 [github.com/DharoonBalajii/raksha-thunai](https://github.com/DharoonBalajii/raksha-thunai)</sub>
-
 ### 🧠 LearnFlow
 
 **An AI learning platform that turns a complex topic into a structured learning journey.**
